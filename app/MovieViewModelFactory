@@ -1,0 +1,14 @@
+package com.movie.movieapp.viewmodel
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.movie.movieapp.data.MovieDao
+
+class MovieViewModelFactory(private val dao: MovieDao) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(MovieViewModel::class.java)) {
+            return MovieViewModel(dao) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
