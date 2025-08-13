@@ -1,2 +1,2 @@
-package com.movie.movieapp.network
+package com.movie.movieapp.repository
 
